@@ -1,35 +1,23 @@
-extern crate discord;
+#[macro_use] extern crate serenity;
 
-use discord::Discord;
-use discord::model::Event;
+use serenity::client::Client;
+use serenity::prelude::EventHandler;
+use serenity::framework::standard::StandardFramework;
 use std::env;
 
+struct Handler;
+
+impl EventHandler for Handler {}
 
 fn main() {
-    let discord = Discord::from_bot_token(
-        &env::var("DISCORD_TOKEN").expect("Expected token"),
-    ).expect("login failed");
+    let mut client = Client::new(&env::var("DISCORD_TOKEN").expect("token"), Handler).expect("Error creating client.");
+    client.with_framework(StandardFramework::new().configure(|c| c.prefix(".")).cmd("ping", ping));
 
-    let (mut connection, _) = discord.connect().expect("connect failed");
-    println!("Ready");
-
-    loop {
-        match connection.recv_event() {
-            Ok(Event::MessageCreate(message)) => {
-                println!("{} says: {}", message.author.name, message.content);
-                if message.content == "!test" {
-                    let _ = discord.send_message(message.channel_id, "This is a reply to the test.", "", false);
-                } else if message.content == "!quit" {
-                    println!("Quitting!");
-                    break
-                }
-            }
-            Ok(_) => {}
-            Err(discord::Error::Closed(code, body)) => {
-                println!("Gateway closed on us with code {:?}: {}", code, body);
-                break
-            }
-            Err(err) => println!("Receive error: {:?}", err)
-        }
+    if let Err(why) = client.start() {
+        println!("An error occurred while running the client: {:?}", why);
     }
 }
+
+command!(ping(_context, message) {
+    let _ = message.reply("Pong!");
+});

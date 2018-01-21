@@ -4,4 +4,4 @@ version = "0.1.0"
 authors = ["Omar Quimbaya <omar.quimbaya4@gmail.com>"]
 
 [dependencies]
-discord = "0.8.0"
+serenity = "0.5"

@@ -4,3 +4,4 @@
 **/*.exe
 **/*.pdb
 **/*.lock
+**/env.ps1
