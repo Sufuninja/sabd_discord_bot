@@ -9,6 +9,7 @@
 - Be able to send people coins through the discord channel
 - Share news about cryptocurrency to a relevant channel
 - Have a place where it can be configured by the server administrators
+- Update discord on the development of this bot
 - And more...
 
 I would recommend running this on Linux and not on Windows because Windows will make you install Visual Studio just to get the build tools to make this work. Yuck.
@@ -19,5 +20,4 @@ UPDATE: you really only need msys/mingw installed to make this work. Oops.
 
 Thanks for reading, though. This will get changed a lot as the development continues. 
 
-:panda_face:
-:duck:
+:panda_face: :duck:

@@ -1,7 +1,11 @@
 [package]
-name = "SABD_bot"
+name = "sabd_bot"
 version = "0.1.0"
 authors = ["Omar Quimbaya <omar.quimbaya4@gmail.com>"]
 
 [dependencies]
-serenity = "0.5"
+serenity = "0.5.0"
+typemap = "0.3"
+
+# [dependencies.serenity]
+# features = ["framework", "standard_framework"]
