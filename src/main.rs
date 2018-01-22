@@ -143,7 +143,7 @@ fn main() {
             .allowed_roles(vec!["organizers", "altcoin god"])
         )
         .command("some long command", |c| c.cmd(some_long_command)),
-    )
+    );
 }
 
 // Commands are created using the command! macro

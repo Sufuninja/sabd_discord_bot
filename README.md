@@ -20,4 +20,10 @@ UPDATE: you really only need msys/mingw installed to make this work. Oops.
 
 Thanks for reading, though. This will get changed a lot as the development continues. 
 
+## Resources
+
+- [https://twentysix26.github.io/Red-Docs/red_guide_bot_accounts/](https://twentysix26.github.io/Red-Docs/red_guide_bot_accounts/)
+- [https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token](https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token)
+- [https://github.com/zeyla/serenity](https://github.com/zeyla/serenity)
+
 :panda_face: :duck:
